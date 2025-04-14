@@ -2,13 +2,11 @@ import { useNavigate } from "react-router-dom";
 
 function LearnPage() {
     const navigate = useNavigate()
-    const handleClick = () => {
-        navigate("/")
-    }
+    const handleClick = () => { navigate("/") }
 
     return (
         <>
-        <button onClick={handleClick}>Click me!</button>
+            <button onClick={handleClick}>Click me!</button>
         </>
     );
 }

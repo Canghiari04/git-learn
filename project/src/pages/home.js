@@ -1,10 +1,10 @@
-import './css/home.css';
+import '../css/home.css';
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import git from './img/git.png';
-import Languages from './values/strings.js';
+import git from '../img/git.png';
+import Languages from '../values/strings.js';
 
 function LanguageSelector({selectedLanguage, onChange}) {
   return (
@@ -20,7 +20,7 @@ function Header({selectedLanguage, setSelectedLanguage}) {
     <header className="home-header">
       <span className="span-git-learn">git-learn</span>
       <div>
-        <span>Learn</span>
+        <a href="/learn"><span>{Languages[selectedLanguage].learn}</span></a>
         <LanguageSelector selectedLanguage={selectedLanguage} onChange={setSelectedLanguage}/>
         <a href="https://github.com/Canghiari04/git-learn"><img src={git} alt="Git"/></a>
       </div>
@@ -30,10 +30,7 @@ function Header({selectedLanguage, setSelectedLanguage}) {
 
 function StartButton({text}) {
   const navigate = useNavigate()
-
-  const handleClick = () => {
-    navigate("/learn")
-  }
+  const handleClick = () => { navigate("/learn") }
 
   return (
     <button id="button-start" onClick={handleClick}>{text}</button>

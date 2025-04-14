@@ -1,5 +1,6 @@
 const Languages = {
     "IT": {
+      "learn": "Impara",
       "headline": "Comprendi le funzionalità di git, da zero ad avanzato.",
       "content": "Imparare i comandi git è più semplice di quanto tu possa pensare. Tramite questo strumento avrai l'opportunità di comprendere, imparare e mettere in pratica i concetti alla base di git.",
       "button": "Inizia da qui",
@@ -8,6 +9,7 @@ const Languages = {
       "git_content": "è un sistema per il controllo di versione di progetti di piccole e grandi dimensioni, realizzato per garantire elevata facilità e velocità di manipolazione del codice."
     },
     "EN": {
+      "learn": "Learn",
       "headline": "Discover git functionality, from zero to hero.",
       "content": "Learning git commands is easier than you think. Through this web site you will have the chance to understand, learn and do some stuff by basic concepts of git.",
       "button": "Start here",
