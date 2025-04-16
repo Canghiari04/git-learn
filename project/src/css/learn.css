@@ -1,0 +1,100 @@
+.learn-div {
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-align: center;
+    align-items: center;
+    padding: 0vh 45vh;
+    background-color: #282c34;
+}
+
+.learn-div > div {
+    max-width: 100vh;
+    padding-top: 15vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.learn-div > div > div {
+    text-align: left;
+    padding: 1.5vh 1.75vh;
+    transition: background-color 0.5s ease 0.7s;
+}
+
+.div-first-child {
+    width: 39vh;
+    background-color: rgba(165, 42, 42, 0.596);
+
+}
+
+.div-first-child:hover {
+    background-color: brown;
+    transition-timing-function: 1ms;
+}
+
+.div-second-child {
+    width: 39vh;
+    background-color: rgba(255, 255, 0, 0.596);
+}
+
+.div-second-child:hover {
+    background-color: rgba(255, 255, 0, 0.747);
+    transition-timing-function: 1ms;
+}
+
+.learn-div > div > div > div {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.span-subtitle {
+    color: white;
+    font-size: 15pt;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.span-achievement {
+    color: white;
+    font-size: 12pt;
+    font-weight: 300;
+}
+
+.learn-div > div > div > p {
+    width: 25vh;
+    color: white;
+    padding: 2.5vh 0vh;
+}
+
+.learn-div button {
+    width: 7.5vh;
+    border: none;
+    float: right;
+    display: flex;
+    font-size: 10pt;
+    border-radius: 0.5vh;
+    padding: 0.75vh 1.25vh;
+    justify-content: space-between;
+    transition: color 0.5s ease 0.7s;
+    color: rgba(255, 255, 255, 0.733);
+    background-color: rgba(0, 0, 0, 0.75);
+    transition: background-color 0.5s ease 0.7s;
+}
+
+.learn-div button:hover {
+    color: white;
+    background-color: black;
+    transition-timing-function: 7ms;
+}
+
+.learn-div button > img {
+    width: 1.5vh;
+    opacity: 0.75;
+    filter: invert(100%);
+}
+
+.learn-div button > img:hover {
+    filter: invert(100%);
+}

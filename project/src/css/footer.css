@@ -1,0 +1,26 @@
+footer {
+  bottom: 5vh;
+  width: 100vh;
+  color: white;
+  position: absolute;
+}
+
+footer p {
+  font-weight: lighter;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer p a span {
+  font-weight: bolder;
+  transition: color 0.5s ease 0.3s;
+}
+
+footer p a span:hover {
+  color: yellow;
+  text-decoration: underline;
+  transition-timing-function: 7ms;
+}

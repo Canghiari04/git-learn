@@ -1,102 +1,31 @@
-.home {
+.home-div {
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
   text-align: center;
-  padding-left: 50vh;
-  padding-right: 50vh;
-  padding-bottom: 5vh;
+  position: relative;
   align-items: center;
+  padding: 0vh 45vh 25vh 45vh;
   background-color: #282c34;
 }
 
-.home-header {
-  display: flex;
-  padding-top: 5vh;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.home-header span {
-  color: white;
-}
-
-.span-git-learn {
-  cursor: pointer;
-  font-size: large;
-  font-weight: bold;
-  transition: color 0.5s ease 0.3s; 
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.span-git-learn:hover {
-  color: yellow;
-  text-decoration: underline;
-  transition-timing-function: 7ms;
-}
-
-.home-header div {
-  display: flex;
-  align-items: center;
-}
-
-.home-header div select {
-  border: none;
-  color: white;
-  font-weight: bold;
-  font-size: medium;
-  background-color: #282c34;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.home-header div span {
-  font-weight: bold;
-  margin-right: 2vh;
-  transition: color 0.5s ease 0.3s;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.home-header div span:hover {
-  color: yellow;
-  text-decoration: underline;
-  transition-timing-function: 7ms;
-}
-
-.home-header div img {
-  cursor: pointer;
-  max-height: 3vh;
-  margin-left: 2vh;
-  transition: filter 0.5s ease 0.3s; 
-}
-
-.home-header div img:hover {
-  filter: invert(500%);
-  transition-timing-function: 7ms;
-}
-
-.home > div:first-of-type {
+.home-div > div:first-of-type {
   min-width: 100vh;
   padding-top: 15vh;
   display: inline-flex;
 }
 
-.div-first-child {
-  min-width: 100vh;
-  padding-top: 15vh;
-  display: inline-flex;
+.home-div div div {
+  width: 45vh;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
 }
 
 .div-other-child {
   min-width: 100vh;
   padding-top: 15vh;
   display: inline-flex;
-}
-
-.home div div {
-  width: 50vh;
-  display: flex;
-  text-align: left;
-  flex-direction: column;
 }
 
 .span-headline {
@@ -110,6 +39,7 @@
 }
 
 .span-content {
+  width: 40vh;
   color: white;
   display: block;
   font-size: 11pt;
@@ -128,21 +58,21 @@
   transition-timing-function: 7ms;
 }
 
-button {
+.button-start {
   border: none;
-  padding: 1.5vh;
   color: black;
   cursor: pointer;
   font-weight: bold;
   width: fit-content;
   border-radius: 0.75vh;
+  padding: 1.25vh 1.75vh;
   background-color: yellow;
   transition: color 0.5s ease 0.3s;
   transition: background-color 0.5s ease 0.3s;
   font-family: 'Courier New', Courier, monospace;
 }
 
-button:hover {
+.button-start:hover {
   color: white;
   background-color: darkkhaki;
   transition-timing-function: 7ms;
@@ -152,12 +82,14 @@ button:hover {
   border: none;
   display: flex;
   color: black;
-  padding: 1.25vh;
   font-weight: bold;
   width: fit-content;
   align-items: center;
   border-radius: 0.75vh;
+  padding: 1.25vh 1.75vh;
   background-color: yellow;
+  transition: color 0.5s ease 0.3s;
+  transition: background-color 0.5s ease 0.3s;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -176,33 +108,5 @@ button:hover {
 
 .button-github img:hover {
   filter: invert(500%);
-  transition-timing-function: 7ms;
-}
-
-footer {
-  width: 100vh;
-  bottom: 0.5vh;
-  color: white;
-  position: sticky;
-  margin-top: 20vh;
-}
-
-footer p {
-  font-weight: lighter;
-}
-
-footer a {
-  color: white;
-  text-decoration: none;
-}
-
-footer p a span {
-  font-weight: bolder;
-  transition: color 0.5s ease 0.3s;
-}
-
-footer p a span:hover {
-  color: yellow;
-  text-decoration: underline;
   transition-timing-function: 7ms;
 }

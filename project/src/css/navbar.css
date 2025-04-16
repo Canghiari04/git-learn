@@ -1,0 +1,66 @@
+header {
+    display: flex;
+    padding-top: 5vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.link-git-learn {
+    color: white;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    transition: color 0.5s ease 0.3s; 
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.link-git-learn:hover {
+    color: yellow;
+    text-decoration: underline;
+    transition-timing-function: 7ms;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header div a {
+    color: white;
+    font-weight: bold;
+    transition: color 0.5s ease 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header div a:hover {
+    color: yellow;
+    text-decoration: underline;
+    transition-timing-function: 7ms;
+}
+
+header div select {
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 2vh;
+    font-weight: bold;
+    font-size: medium;
+    margin-right: 2vh;
+    background-color: #282c34;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header div img {
+    cursor: pointer;
+    max-height: 3vh;
+    transition: filter 0.5s ease 0.3s; 
+}
+
+header div img:hover {
+    filter: invert(500%);
+    transition-timing-function: 7ms;
+}
