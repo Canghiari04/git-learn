@@ -7,13 +7,22 @@ import { GitLearnContext } from '../App.js';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/navbar.js';
 import { Footer } from '../components/footer.js';
-import { NavbarStrings, HomeStrings } from '../values/strings.js';
+import { ForwardNav } from '../components/forwardNav.js';
+import { NavbarStrings, HomeStrings, NavStrings } from '../values/strings.js';
 
 function HomePage({onChange}) {
   const language = useContext(GitLearnContext);
 
   var navbarContent = NavbarStrings[language];
   var pageContent = HomeStrings[language];
+  var navContent = NavStrings[language];
+
+  var navigate = useNavigate();
+  document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.code === "Enter") {
+      navigate("/learn");
+    }
+  })
 
   return (
     <>
@@ -22,6 +31,7 @@ function HomePage({onChange}) {
         <MainContent content={pageContent}/>
         <Footer content={pageContent}/>
       </div>
+      <ForwardNav route={"/learn"} text={navContent.link_forward}/>
     </>
   );
 }
@@ -36,10 +46,12 @@ function MainContent({content}) {
           <StartButton text={content.button_1}/>
         </div>
         <div>
+          <img/>
         </div>
       </div>
-      <div className="div-other-child">
+      <div>
         <div>
+          <img/>
         </div>
         <div>
           <span className="span-headline">Open Source</span>
@@ -49,7 +61,7 @@ function MainContent({content}) {
           </form>
         </div> 
       </div>
-      <div className="div-other-child">
+      <div>
         <div>
           <span className="span-headline">{content.title_3}</span>
           <span className="span-content"><span>Git</span> {content.content_3}</span>
@@ -58,6 +70,7 @@ function MainContent({content}) {
           </form>
         </div> 
         <div>
+          <img/>
         </div>
       </div>
     </>
