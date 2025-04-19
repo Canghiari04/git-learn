@@ -18,7 +18,13 @@
     justify-content: space-between;
 }
 
-.learn-div > div > div {
+.learn-div > div > a {
+    text-decoration: none;
+}
+
+.learn-div > div > a > div {
+    cursor: pointer;
+    min-height: 25vh;
     text-align: left;
     position: relative; 
     border-radius: 0.5vh;
@@ -45,7 +51,7 @@
     background-color: rgba(255, 255, 0, 0.6);
 }
 
-.learn-div > div > div > div {
+.learn-div > div > a > div > div {
     width: 100%;
     display: flex;
     padding: 2vh 0vh;
@@ -69,7 +75,7 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-.learn-div > div > div > p {
+.learn-div > div > a > div > p {
     width: 65%;
     color: white;
     padding-left: 2vh;
@@ -79,18 +85,22 @@
 .learn-div button {
     right: 2vh;
     bottom: 2vh;
-    width: 8.5vh;
+    width: 9vh;
     border: none;
     float: right;
     display: flex;
-    font-size: 10.5pt;
+    font-size: 9pt;
+    cursor: pointer;
+    font-weight: 600;
     position: absolute;
+    align-items: center;
     border-radius: 0.5vh;
     padding: 0.75vh 1.25vh;
     background-color: black;
     justify-content: space-between;
     transition: color 0.5s ease 0.7s;
     color: rgba(255, 255, 255, 0.7);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .learn-div button:hover {

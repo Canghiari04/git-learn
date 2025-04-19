@@ -9,11 +9,11 @@ export function ForwardNav({route, text}) {
         <>
             <div className="div-forward-nav">
                 <div>
-                    <span className="span-press-key">Ctrl</span>
+                    <span className="span-press-key">Shift</span>
                     <span className="span-plus"> + </span>
                     <span className="span-press-key">Enter</span>
                 </div>
-                <Link to={route}><img src={arrow}/><span>{text}</span></Link>
+                <Link to={route}><span>{text}</span><img src={arrow}/></Link>
             </div>
         </>
     );

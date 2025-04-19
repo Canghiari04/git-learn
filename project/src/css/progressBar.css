@@ -1,0 +1,28 @@
+.div-progress-bar {
+    left: 50%;
+    bottom: 5vh;
+    padding: 1.25vh;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    transform: translateX(-50%);
+}
+
+.div-progress-bar > span {
+    color: white;
+    font-size: 12pt;
+    font-weight: 300;
+    margin-left: 1vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.div-progress-bar > progress {
+    border: none;
+    height: 1vh;
+    margin-top: 0.5vh;
+    background-color: #5e5f649d;
+}
+
+progress::-moz-progress-bar { 
+    background-color: yellow;
+}

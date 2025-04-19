@@ -7,6 +7,7 @@ import { GitLearnContext } from '../App.js';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/navbar.js';
 import { Footer } from '../components/footer.js';
+import { ForwardShortCut } from '../utils/shortcut.js';
 import { ForwardNav } from '../components/forwardNav.js';
 import { NavbarStrings, HomeStrings, NavStrings } from '../values/strings.js';
 
@@ -17,12 +18,7 @@ function HomePage({onChange}) {
   var pageContent = HomeStrings[language];
   var navContent = NavStrings[language];
 
-  var navigate = useNavigate();
-  document.addEventListener("keydown", (event) => {
-    if (event.ctrlKey && event.code === "Enter") {
-      navigate("/learn");
-    }
-  })
+  ForwardShortCut("/learn");
 
   return (
     <>

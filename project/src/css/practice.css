@@ -1,0 +1,17 @@
+.div-practice {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-align: center;
+    align-items: center;
+    background-color: #282c34;
+}
+
+.div-practice > .div-header {
+    padding: 0vh 45vh;
+}
+
+.div-absolute {
+    text-align: center;
+}
