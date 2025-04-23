@@ -6,7 +6,6 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { GitLearnContext } from '../App.js';
 import { Header } from '../components/navbar.js';
-import { BackNav } from '../components/backNav.js';
 import { BackShortCut } from '../utils/shortcut.js';
 import { NavbarStrings,  LearnStrings, NavStrings } from '../values/strings.js';
 
@@ -15,7 +14,6 @@ function LearnPage({onChange}) {
     
     var navbarContent = NavbarStrings[language];
     var learnContent = LearnStrings[language];
-    var navContent = NavStrings[language];
 
     BackShortCut("/");
       
@@ -25,7 +23,6 @@ function LearnPage({onChange}) {
                 <Header selectedLanguage={language} content={navbarContent} onChange={onChange}/>
                 <MainContent content={learnContent}/>
             </div>
-            <BackNav route={"/"} text={navContent.link_back}/>
         </>
     );
 }
