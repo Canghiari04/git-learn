@@ -1,4 +1,4 @@
-.learn-div {
+.div-learn {
     min-height: 100vh;
     padding: 0vh 45vh;
     position: relative;
@@ -9,7 +9,7 @@
     background-color: #282c34;
 }
 
-.learn-div > div {
+.div-learn > div {
     gap: 5vh;
     width: 100%;
     display: grid;
@@ -18,11 +18,11 @@
     justify-content: space-between;
 }
 
-.learn-div > div > a {
+.div-learn > div > a {
     text-decoration: none;
 }
 
-.learn-div > div > a > div {
+.div-learn > div > a > div {
     cursor: pointer;
     min-height: 25vh;
     text-align: left;
@@ -51,7 +51,7 @@
     background-color: rgba(255, 255, 0, 0.6);
 }
 
-.learn-div > div > a > div > div {
+.div-learn > div > a > div > div {
     width: 100%;
     display: flex;
     padding: 2vh 0vh;
@@ -75,14 +75,14 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-.learn-div > div > a > div > p {
+.div-learn > div > a > div > p {
     width: 65%;
     color: white;
     padding-left: 2vh;
     padding-bottom: 7.5vh;
 }
 
-.learn-div button {
+.div-learn button {
     right: 2vh;
     bottom: 2vh;
     width: 9vh;
@@ -103,12 +103,12 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-.learn-div button:hover {
+.div-learn button:hover {
     color: white;
     transition-timing-function: 7ms;
 }
 
-.learn-div button > img {
+.div-learn button > img {
     width: 1.5vh;
     opacity: 0.75;
     filter: invert(100%);

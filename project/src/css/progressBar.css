@@ -1,8 +1,8 @@
 .div-progress-bar {
     left: 50%;
     bottom: 5vh;
-    padding: 1.25vh;
     display: flex;
+    padding: 1.25vh;
     position: absolute;
     flex-direction: column;
     transform: translateX(-50%);

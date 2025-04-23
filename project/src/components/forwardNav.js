@@ -2,9 +2,7 @@ import '../css/forwardNav.css';
 
 import arrow from '../img/arrow.png';
 
-import { Link } from "react-router-dom";
-
-export function ForwardNav({route, text}) {    
+export function ForwardNav({ text, handleClick }) {    
     return (
         <>
             <div className="div-forward-nav">
@@ -13,7 +11,10 @@ export function ForwardNav({route, text}) {
                     <span className="span-plus"> + </span>
                     <span className="span-press-key">Enter</span>
                 </div>
-                <Link to={route}><span>{text}</span><img src={arrow}/></Link>
+                <button className="button-first" onClick={handleClick}>
+                    <span>{text}</span>
+                    <img src={arrow}/>
+                </button>
             </div>
         </>
     );

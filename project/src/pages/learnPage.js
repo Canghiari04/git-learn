@@ -6,28 +6,25 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { GitLearnContext } from '../App.js';
 import { Header } from '../components/navbar.js';
-import { BackShortCut } from '../utils/shortcut.js';
-import { NavbarStrings,  LearnStrings, NavStrings } from '../values/strings.js';
+import { NavbarStrings,  LearnStrings } from '../values/strings.js';
 
-function LearnPage({onChange}) {
+function LearnPage({ onSelectLanguage }) {
     const language = useContext(GitLearnContext);
     
     var navbarContent = NavbarStrings[language];
     var learnContent = LearnStrings[language];
 
-    BackShortCut("/");
-      
     return (
         <>  
-            <div className="learn-div">
-                <Header selectedLanguage={language} content={navbarContent} onChange={onChange}/>
+            <div className="div-learn">
+                <Header selectedLanguage={language} content={navbarContent} onChange={onSelectLanguage}/>
                 <MainContent content={learnContent}/>
             </div>
         </>
     );
 }
 
-function MainContent({content}) {
+function MainContent({ content }) {
     return (
         <>
             <div>

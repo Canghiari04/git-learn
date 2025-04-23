@@ -10,9 +10,11 @@ header a {
 }
 
 .link-git-learn {
+    width: 65%;
     color: white;
     cursor: pointer;
     font-size: large;
+    text-align: left;
     font-weight: bold;
     transition: color 0.5s ease 0.3s; 
     font-family: 'Courier New', Courier, monospace;
@@ -25,8 +27,11 @@ header a {
 }
 
 header div {
-    display: flex;
+    width: 30%;
+    display: grid;
+    text-align: right;
     align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 header div a {
@@ -46,15 +51,14 @@ header div select {
     border: none;
     color: white;
     cursor: pointer;
-    margin-left: 2vh;
     font-weight: bold;
     font-size: medium;
-    margin-right: 2vh;
     background-color: #282c34;
     font-family: 'Courier New', Courier, monospace;
 }
 
 header div img {
+    padding: 0;
     cursor: pointer;
     max-height: 3vh;
     transition: filter 0.5s ease 0.3s; 

@@ -7,21 +7,18 @@ import { GitLearnContext } from '../App.js';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/navbar.js';
 import { Footer } from '../components/footer.js';
-import { ForwardShortCut } from '../utils/shortcut.js';
-import { NavbarStrings, HomeStrings, NavStrings } from '../values/strings.js';
+import { NavbarStrings, HomeStrings } from '../values/strings.js';
 
-function HomePage({onChange}) {
+function HomePage({ onSelectLanguage }) {
   const language = useContext(GitLearnContext);
 
   var navbarContent = NavbarStrings[language];
   var pageContent = HomeStrings[language];
 
-  ForwardShortCut("/learn");
-
   return (
     <>
       <div className="home-div">
-        <Header selectedLanguage={language} content={navbarContent} onChange={onChange}/>
+        <Header selectedLanguage={language} content={navbarContent} onChange={onSelectLanguage}/>
         <MainContent content={pageContent}/>
         <Footer content={pageContent}/>
       </div>
@@ -70,7 +67,7 @@ function MainContent({content}) {
   );
 }
 
-function StartButton({text}) {
+function StartButton({ text }) {
   const navigate = useNavigate();
   const handleClick = () => { navigate("/learn") };
 

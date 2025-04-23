@@ -2,9 +2,7 @@ import '../css/backNav.css';
 
 import arrow from '../img/arrow.png';
 
-import { Link } from "react-router-dom";
-
-export function BackNav({route, text}) {    
+export function BackNav({ text, handleClick }) {    
     return (
         <>
             <div className="div-back-nav">
@@ -13,7 +11,10 @@ export function BackNav({route, text}) {
                     <span className="span-plus"> + </span>
                     <span className="span-press-key">Ctrl</span>
                 </div>
-                <Link to={route}><img src={arrow}/><span>{text}</span></Link>
+                <button className="button-first" onClick={handleClick}>
+                    <img src={arrow}/>
+                    <span>{text}</span>
+                </button>
             </div>
         </>
     );

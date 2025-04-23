@@ -1,21 +1,33 @@
-import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
 
-export function BackShortCut(route) {
-  var navigate = useNavigate();
+export function BackShortCut(handleClick) {
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.shiftKey && event.ctrlKey) {
+        handleClick();
+      }
+    };
 
-  document.addEventListener("keydown", (event) => {
-    if (event.shiftKey && event.ctrlKey) {
-        navigate(route);
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
     }
   });
 }
 
-export function ForwardShortCut(route) {
-  var navigate = useNavigate();
-  
-  document.addEventListener("keydown", (event) => {
-    if (event.shiftKey && event.code === "Enter") {
-      navigate(route);
+export function ForwardShortCut(handleClick) {
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.shiftKey && event.code === "Enter") {
+        handleClick();
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
     }
   });
 }

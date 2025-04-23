@@ -3,8 +3,11 @@
     bottom: 5vh;
     width: 11vh;
     width: auto;
+    display: flex;
     color: white;
     position: absolute;
+    align-items: center;
+    flex-direction: column;
 }
 
 .div-back-nav div {
@@ -31,10 +34,12 @@
     font-size: 8pt;
 }
 
-.div-back-nav a {
+.div-back-nav .button-first {
     width: 100%;
+    border: none;
     display: flex;
     color: white;
+    cursor: pointer;
     font-size: 10pt;
     padding: 1vh 1vh;
     font-weight: bold;
@@ -47,16 +52,16 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-.div-back-nav a span {
+.div-back-nav .button-first span {
     margin-right: 1vh;
 }
 
-.div-back-nav a:hover {
+.div-back-nav .button-first:hover {
     background-color: black;
     transition-timing-function: 7ms;
 }
 
-.div-back-nav a img {
+.div-back-nav .button-first img {
     width: 2vh;
     filter: invert(100%);
     transform: rotate(180deg);

@@ -1,5 +1,6 @@
 .div-practice {
     min-height: 100vh;
+    padding: 0vh 45vh;
     position: relative;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -8,10 +9,16 @@
     background-color: #282c34;
 }
 
-.div-practice > .div-header {
-    padding: 0vh 45vh;
+.div-content {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    color: white;
+    position: sticky;
+    text-align: center;
 }
 
-.div-absolute {
-    text-align: center;
+.span-title { 
+    font-size: 23pt;
+    font-family: 'Courier New', Courier, monospace;
 }
