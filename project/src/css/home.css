@@ -23,6 +23,15 @@
   flex-direction: column;
 }
 
+.div-on-right span {
+  text-align: right;
+}
+
+.div-on-right form {
+  display: flex;
+  justify-content: right;
+}
+
 .span-headline {
   float: left;
   color: white;

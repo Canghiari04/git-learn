@@ -1,0 +1,114 @@
+.div-container {
+    gap: 2vh;
+    display: flex;
+    max-height: 100%;
+    flex-direction: row;
+}
+
+.div-suggestion {
+    width: 35%;
+    text-align: left;
+    min-height: 100%;
+}
+
+.div-suggestion > fieldset {
+    border: none;
+    padding: 2vh 3vh; 
+    border-radius: 0.5vh;
+    background-color: #4a4b50;
+}
+
+.div-suggestion > fieldset > legend {
+    font-size: 9pt;
+    color: white;
+    border-radius: 0.5vh;
+    padding: 0.5vh 0.5vh;
+    background-color: #4a4b50;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.span-suggestion {
+    color: white;
+    font-size: 10pt;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.span-git {
+    border-radius: 0.5vh;
+    padding: 0.25vh 0.75vh;
+    background-color: gray;
+}
+
+.div-question {
+    width: 65%;
+    display: flex;
+    color: white;
+    text-align: left;
+    padding: 2vh 3vh; 
+    min-height: 100%;
+    border-radius: 0.5vh;
+    flex-direction: column;
+    background-color: #3a3b3d;
+}
+
+.div-question > .span-title {
+    font-size: 16pt;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.span-corpus {
+    font-size: 9pt;
+    margin: 2vh 0vh;
+    line-height: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.div-question > fieldset {
+    border: none;
+    margin: 2vh 0vh;
+    border-radius: 0.5vh;
+    background-color: #333333;
+}
+
+.div-question > fieldset > legend {
+    font-size: 9pt;
+    border-radius: 0.5vh;
+    padding: 0.5vh 0.5vh;
+    background-color: #333333;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.span-question {
+    font-size: 9pt;
+    margin: 2vh 0vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.span-cmd {
+    font-size: 9pt;
+    margin: 0.25vh 0vh;
+    font-weight: bold;
+    border-radius: 0.5vh;
+    padding: 0.5vh 0.5vh;
+    display: inline-block;
+    background-color: gray;
+}
+
+.span-git:hover, .span-cmd:hover{
+    color: black;
+    font-weight: 600;
+    background-color: yellow;
+}
+
+.div-question > fieldset > textarea {
+    width: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 11pt;
+    border-radius: 0.5vh;
+    background-color: #333333;
+    font-family: 'Courier New', Courier, monospace;
+}

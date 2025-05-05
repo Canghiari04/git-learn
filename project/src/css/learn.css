@@ -83,19 +83,20 @@
 }
 
 .div-learn button {
+    width: 9vh;
     right: 2vh;
     bottom: 2vh;
-    width: 9vh;
     border: none;
     float: right;
     display: flex;
     font-size: 9pt;
+    position: fixed;
     cursor: pointer;
     font-weight: 600;
     position: absolute;
+    padding: 1vh 1.25vh;
     align-items: center;
     border-radius: 0.5vh;
-    padding: 0.75vh 1.25vh;
     background-color: black;
     justify-content: space-between;
     transition: color 0.5s ease 0.7s;

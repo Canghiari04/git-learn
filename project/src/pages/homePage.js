@@ -26,7 +26,7 @@ function HomePage({ onSelectLanguage }) {
   );
 }
 
-function MainContent({content}) {
+function MainContent({ content }) {
   return (
     <>
       <div>
@@ -43,7 +43,7 @@ function MainContent({content}) {
         <div>
           <img/>
         </div>
-        <div>
+        <div className="div-on-right">
           <span className="span-headline">Open Source</span>
           <span className="span-content"><span>git-learn</span> {content.content_2}</span>
           <form action="https://github.com/Canghiari04/git-learn">

@@ -10,7 +10,7 @@ header a {
 }
 
 .link-git-learn {
-    width: 65%;
+    width: auto;
     color: white;
     cursor: pointer;
     font-size: large;
@@ -27,7 +27,7 @@ header a {
 }
 
 header div {
-    width: 30%;
+    width: 35%;
     display: grid;
     text-align: right;
     align-items: center;
