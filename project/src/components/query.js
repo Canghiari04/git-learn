@@ -1,8 +1,8 @@
 import '../css/query.css';
 
-import { Fragment } from 'react';
+import { useEffect, Fragment} from 'react';
 
-// Regular Expressions for main contents like suggestion and corpus
+// Regular Expression for main contents like suggestion and corpus
 const regex_text = new RegExp(/\\textgray{([\-]*\w+[\s]*[\w]+)}/);
 const pattern_text = /\\textgray{([\-]*\w+[\s]*[\w]+)}/;
 
@@ -11,6 +11,54 @@ const regex_question = new RegExp(/\/\/ \\textcmd{(.*?)\}/);
 const pattern_question = /\/\/ \\textcmd{(.*?)\}/;
 
 function Query({title, corpus, question, suggestion}) {
+    useEffect(() => {
+        const textarea = document.getElementById("textarea-answer");
+
+        const prefix = "$ ";
+        let lockedContent = "";
+
+        textarea.value = prefix;
+        
+        if (!textarea) return
+        
+        function keyPressed(event) {
+            // Getting last cursor position
+            const cursorPos = textarea.selectionEnd;
+
+            const actions = {
+                "Enter": () => {
+                    event.preventDefault();
+
+                    // Writing new prefix and saving last changes
+                    textarea.value = textarea.value + "\n" + prefix;
+                    lockedContent = textarea.value.substring(0, textarea.selectionEnd);
+                },
+                "ArrowUp": () => {
+                    event.preventDefault();
+                },
+                "ArrowDown": () => {
+                    event.preventDefault(); 
+                },
+                "Backspace": () => {
+                    // Action denied when the cursor is before the locked content
+                    if (cursorPos <= lockedContent.length) {
+                        event.preventDefault();
+                    }
+                }
+            }
+
+            if (actions[event.code]) {
+                actions[event.code]();
+            }
+        }
+
+        textarea.addEventListener("keydown", keyPressed);
+
+        return () => {
+            textarea.removeEventListener("keydown", keyPressed);
+        }
+    }, [])
+
     return (
         <>
             <div className="div-container">
@@ -29,7 +77,7 @@ function Query({title, corpus, question, suggestion}) {
                     </fieldset>
                     <fieldset>
                         <legend>Git</legend>
-                        <textarea></textarea>
+                        <textarea id="textarea-answer"></textarea>
                     </fieldset>
                 </div>
             </div>

@@ -35,7 +35,7 @@ function PracticePage({ onSelectLanguage }) {
 
     const [parsed, setParsed] = useState("");
 
-    // [count] defines the moment when React have to render the newest components
+    // [count] defines the moment when the framework have to render the latest components
     useEffect(() => {
         getTmp();
         setBackNavVisibility(count !== 1);
@@ -44,7 +44,7 @@ function PracticePage({ onSelectLanguage }) {
 
     async function getTmp() {
         const client = supabaseFactory.getInstance();
-        var { data } = await client.from("questions").select().eq("id", "1");
+        var { data } = await client.from("questions").select().eq("id", count);
 
         var parsed;
         data.map((d) => {

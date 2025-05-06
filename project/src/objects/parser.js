@@ -47,7 +47,7 @@ export default class Parser {
             text = text.replace(match[0], substitution);
         }   
 
-        tokens.push(text.substring(i - 1, text.length));
+        tokens.push(text.substring(i, text.length));
 
         return tokens;
     }
