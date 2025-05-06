@@ -12,12 +12,15 @@ const pattern_question = /\/\/ \\textcmd{(.*?)\}/;
 
 function Query({title, corpus, question, suggestion}) {
     useEffect(() => {
+        const prefix = "$ ";
         const textarea = document.getElementById("textarea-answer");
 
-        const prefix = "$ ";
-        let lockedContent = "";
-
         textarea.value = prefix;
+
+        let index = 0;
+        let tokens = new Array();
+        let queueCommands = new Array();
+        let lockedContent = textarea.value.substring(0, textarea.selectionEnd);
         
         if (!textarea) return
         
@@ -28,16 +31,36 @@ function Query({title, corpus, question, suggestion}) {
             const actions = {
                 "Enter": () => {
                     event.preventDefault();
+                    
+                    // Saving last command written
+                    tokens = textarea.value.split("$ ");
+                    queueCommands.push(tokens[tokens.length - 1]);
 
                     // Writing new prefix and saving last changes
                     textarea.value = textarea.value + "\n" + prefix;
                     lockedContent = textarea.value.substring(0, textarea.selectionEnd);
+
+                    index = 0;
                 },
                 "ArrowUp": () => {
-                    event.preventDefault();
+                    event.preventDefault(); 
+                    
+                    if (index !== queueCommands.length) {
+                        let item = queueCommands[(queueCommands.length - 1) - index];
+                        textarea.value = lockedContent + item;
+
+                        index++;
+                    }
                 },
                 "ArrowDown": () => {
                     event.preventDefault(); 
+
+                    if (index > 0) {
+                        index--;
+
+                        let item = queueCommands[(queueCommands.length - 1) - index];
+                        textarea.value = lockedContent + item;
+                    }
                 },
                 "Backspace": () => {
                     // Action denied when the cursor is before the locked content
