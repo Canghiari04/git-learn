@@ -35,6 +35,7 @@ function Query({title, corpus, question, suggestion}) {
                     // Saving last command written
                     tokens = textarea.value.split("$ ");
                     queueCommands.push(tokens[tokens.length - 1]);
+                    queueCommands = queueCommands.filter((token) => token !== "");
 
                     // Writing new prefix and saving last changes
                     textarea.value = textarea.value + "\n" + prefix;
