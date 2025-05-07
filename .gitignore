@@ -136,4 +136,4 @@ dist
 .pnp.*
 
 # txt
-project/src/tmp.txt
+project/src/*.txt
