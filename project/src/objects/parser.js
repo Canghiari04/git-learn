@@ -2,12 +2,12 @@ const regex_text = /\\textgray{([\-]*\w+[\s]*[\w]+)}/;
 const regex_question = /\/\/ \\textcmd{(.*?)\}/;
 
 export default class Parser {
-    constructor(id, title, corpus, question, suggest) {
+    constructor(id, title, corpus, question, suggestion) {
         this.id = id;
         this.title = title;
         this.corpus = corpus;
         this.question = question;
-        this.suggest = suggest;
+        this.suggestion = suggestion;
     }
 
     get record() {
@@ -20,8 +20,8 @@ export default class Parser {
             title: this.title,
             corpus: this.parseText(this.corpus, regex_text),
             question: this.parseQuestion(this.question, regex_question),
-            suggest: this.parseText(this.suggest, regex_text)
-        };
+            suggestion: this.parseText(this.suggestion, regex_text)
+        }
     }
 
     parseText(text, pattern) {

@@ -60,7 +60,7 @@
 .span-corpus {
     font-size: 9pt;
     margin: 2vh 0vh;
-    line-height: 1.5em;
+    line-height: 1.75em;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -103,10 +103,10 @@
 
 .div-question > fieldset > textarea {
     width: 100%;
-    height: 150px;
     resize: none;
     border: none;
     outline: none;
+    height: 100px;
     color: white;
     font-size: 11pt;
     border-radius: 0.5vh;
