@@ -1,26 +1,24 @@
 import '../css/practice.css';
 
 import Query from '../components/query.js';
-import fetcherInstance from '../objects/fetcher.js';
+import fetcher from '../objects/fetcher.js';
 
 import { GitLearnContext } from '../App.js';
 import { Header } from '../components/navbar.js';
 import { BackNav } from '../components/backNav.js';
-import { useState, useContext, useEffect } from 'react';
 import { ForwardNav } from '../components/forwardNav.js';
 import { ProgressBar } from '../components/progressBar.js';
+import { useState, useRef, useContext, useEffect } from 'react';
 import { NavbarStrings, NavStrings } from '../values/strings.js';
 import { BackShortCut, ForwardShortCut } from '../utils/shortcut.js';
 
 function PracticePage({ onSelectLanguage }) {
     const language = useContext(GitLearnContext);
-
-    const [count, setCounter] = useState(1);
-    const [previousCount, setPreviousCount] = useState(1);
-
-    // States used to display the target query from buffer
+    
+    // States used to handle current query, race condition flag and the count saved locally
     const [query, setQuery] = useState([]);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [flag, setFlag] = useState(false);
+    const [count, setCounter] = useState(() => { return !(JSON.parse(localStorage.getItem("count"))) ? 1 : JSON.parse(localStorage.getItem("count")); });
     
     const [isBackNavVisibility, setBackNavVisibility] = useState(count !== 1);
     const [isForwardNavVisibility, setForwardNavVisibility] = useState(count !== 27);
@@ -28,40 +26,60 @@ function PracticePage({ onSelectLanguage }) {
     var navContent = NavStrings[language];
     var navbarContent = NavbarStrings[language];
     
+    let previousCount = useRef(0);
+
     function decrease() {
+        previousCount.current = count;
         (count <= 1) ? setCounter(1) : setCounter(count - 1);
     }
 
     function encrease() {
+        previousCount.current = count;
         (count >= 27) ? setCounter(27) : setCounter(count + 1);
     }
 
     BackShortCut(decrease);
     ForwardShortCut(encrease);
 
-    // Displaying new query from buffer
-    function handleQuery(step) {
-        const buffer = fetcherInstance.getBuffer();
-
-        // Taking values between buffer's range --> (0, 5), max() and min() are using for that
-        const index = Math.max(0, Math.min(currentIndex + step, buffer.length - 1));
-
-        setCurrentIndex(index);
-        setQuery(buffer[index]);
-    }
-
     useEffect(() => {
-        setPreviousCount(count);
-
-        setBackNavVisibility(count !== 1);
-        setForwardNavVisibility(count !== 27);
-
-        // Each time count and previousCount change the buffer is updated
-        fetcherInstance.handleBuffer(count, previousCount);
-
-        handleQuery(count - previousCount);
+        localStorage.setItem("count", JSON.stringify(count));
     }, [count]);
 
+    useEffect(() => {
+        async function initialize() {
+            await fetcher.clearBuffer();
+            await fetcher.setUpBuffer();
+
+            setFlag(true);
+        }
+
+        let buffer = fetcher.getBuffer();
+        (buffer.length === 0) ? initialize() : setFlag(true);
+    }, []);
+
+    useEffect(() => {
+        if (!flag) return;
+
+        async function handleBuffer() {
+            setBackNavVisibility(count !== 1);
+            setForwardNavVisibility(count !== 27);
+            
+            // Each time count change I check the buffer
+            await fetcher.handleBuffer(count, previousCount.current);
+    
+            const buffer = fetcher.getBuffer();
+            const index = buffer.findIndex((item) => item.id === count);
+    
+            // Sometimes I use it to see the weird "query is undefined" error
+            console.log("Buffer", buffer, "Count", count);
+
+            let query = buffer[index];
+            setQuery(query);
+        }
+
+        handleBuffer();
+    }, [count, flag]);
+    
     return (
         <>
             <div className="div-practice">

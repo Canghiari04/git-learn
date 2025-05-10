@@ -1,7 +1,7 @@
 import '../css/learn.css';
 
 import arrow from '../img/arrow.png';
-import fetcherInstance from '../objects/fetcher.js';
+import fetcher from '../objects/fetcher.js';
 
 import { useContext } from 'react'; 
 import { Link } from 'react-router-dom';
@@ -10,13 +10,11 @@ import { Header } from '../components/navbar.js';
 import { NavbarStrings,  LearnStrings } from '../values/strings.js';
 
 function LearnPage({ onSelectLanguage }) {
-    fetcherInstance.setUpBuffer();
-    
     const language = useContext(GitLearnContext);
-
+    
     var learnContent = LearnStrings[language];
     var navbarContent = NavbarStrings[language];
-    
+        
     return (
         <>  
             <div className="div-learn">
