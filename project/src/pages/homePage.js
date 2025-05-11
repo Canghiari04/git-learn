@@ -1,24 +1,24 @@
-import '../css/home.css';
+import "../css/home.css";
 
-import git from '../img/git.png';
+import git from "../img/git.png";
 
-import { useContext } from 'react'; 
-import { GitLearnContext } from '../App.js';
-import { useNavigate } from 'react-router-dom';
-import { Header } from '../components/navbar.js';
-import { Footer } from '../components/footer.js';
-import { NavbarStrings, HomeStrings } from '../values/strings.js';
+import { useContext } from "react"; 
+import { Language } from "../utils/context.js";
+import { useNavigate } from "react-router-dom";
+import { Header } from "../components/navbar.js";
+import { Footer } from "../components/footer.js";
+import { NavbarStrings, HomeStrings } from "../values/strings.js";
 
-function HomePage({ onSelectLanguage }) {
-  const language = useContext(GitLearnContext);
+function HomePage() {
+  const { language, setLanguage } = useContext(Language);
 
-  var navbarContent = NavbarStrings[language];
   var pageContent = HomeStrings[language];
+  var navbarContent = NavbarStrings[language];
 
   return (
     <>
       <div className="home-div">
-        <Header selectedLanguage={language} content={navbarContent} onChange={onSelectLanguage}/>
+        <Header selectedLanguage={language} content={navbarContent} onChange={setLanguage}/>
         <MainContent content={pageContent}/>
         <Footer content={pageContent}/>
       </div>

@@ -1,24 +1,23 @@
-import '../css/learn.css';
+import "../css/learn.css";
 
-import arrow from '../img/arrow.png';
-import fetcher from '../objects/fetcher.js';
+import arrow from "../img/arrow.png";
 
-import { useContext } from 'react'; 
-import { Link } from 'react-router-dom';
-import { GitLearnContext } from '../App.js';
-import { Header } from '../components/navbar.js';
-import { NavbarStrings,  LearnStrings } from '../values/strings.js';
+import { useContext } from "react"; 
+import { Link } from "react-router-dom";
+import { Language } from "../utils/context.js";
+import { Header } from "../components/navbar.js";
+import { NavbarStrings,  LearnStrings } from "../values/strings.js";
 
-function LearnPage({ onSelectLanguage }) {
-    const language = useContext(GitLearnContext);
-    
+function LearnPage() {
+    const { language, setLanguage } = useContext(Language);
+
     var learnContent = LearnStrings[language];
     var navbarContent = NavbarStrings[language];
         
     return (
         <>  
             <div className="div-learn">
-                <Header selectedLanguage={language} content={navbarContent} onChange={onSelectLanguage}/>
+                <Header selectedLanguage={language} content={navbarContent} onChange={setLanguage}/>
                 <MainContent content={learnContent}/>
             </div>
         </>

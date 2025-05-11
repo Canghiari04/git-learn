@@ -1,9 +1,14 @@
-import '../css/theoretical.css';
+import "../css/theoretical.css";
 
-function TheoreticalPage({ onSelectLanguage }) {
+import { useContext } from "react";
+import { Language } from "../utils/context";
+
+function TheoreticalPage() {
+    const language = useContext(Language);
+
     return (
         <>
-            <span>WIP</span>
+        
         </>
     );
 }

@@ -1,9 +1,14 @@
-import '../css/profile.css';
+import "../css/profile.css";
 
-function ProfilePage({ onSelectLanguage }) {
+import { useContext } from "react";
+import { Language } from "../utils/context";
+
+function ProfilePage() {
+    const language = useContext(Language);
+
     return (
         <>
-            <span>WIP</span>
+            
         </>
     );
 }
