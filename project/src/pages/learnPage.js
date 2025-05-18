@@ -1,6 +1,7 @@
 import "../css/learn.css";
 
 import arrow from "../img/arrow.png";
+import fetcher from "../objects/fetcher.js";
 
 import { useContext } from "react"; 
 import { Link } from "react-router-dom";
@@ -10,6 +11,8 @@ import { NavbarStrings,  LearnStrings } from "../values/strings.js";
 
 function LearnPage() {
     const { language, setLanguage } = useContext(Language);
+
+    if (!fetcher.getFromStorage()) fetcher.fetchQuestions();
 
     var learnContent = LearnStrings[language];
     var navbarContent = NavbarStrings[language];
