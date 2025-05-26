@@ -2,7 +2,7 @@ import _ from "lodash";
 
 import { SubmitForm } from "./submitForm";
 
-export function SignIn({ setSwitch, setLogged }) {
+export function Signin({ setSwitch, setLogged }) {
     return (
         <>
             <div className="div-container">

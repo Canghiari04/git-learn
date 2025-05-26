@@ -5,7 +5,7 @@ import logger from "../objects/logger";
 import { Language } from "../utils/context";
 import { Login } from "../components/login";
 import { useContext, useState } from "react";
-import { SignIn } from "../components/signIn";
+import { Signin } from "../components/signIn";
 import { Navbar } from "../components/navbar";
 import { NavbarStrings } from "../values/strings";
 import { PersonalArea } from "../components/personalArea";
@@ -33,7 +33,7 @@ function HandlePages({ setLogged }) {
     return (
         <>
             <div className="div-content">
-                { switchPage ? <SignIn setSwitch={() => setSwitchPage(!switchPage)} setLogged={setLogged}/> : <Login setSwitch={() => setSwitchPage(!switchPage)} setLogged={setLogged}/> }
+                { switchPage ? <Signin setSwitch={() => setSwitchPage(!switchPage)} setLogged={setLogged}/> : <Login setSwitch={() => setSwitchPage(!switchPage)} setLogged={setLogged}/> }
             </div>
         </>
     );
