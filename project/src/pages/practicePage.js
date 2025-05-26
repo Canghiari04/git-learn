@@ -5,7 +5,7 @@ import fetcher from "../objects/fetcher.js";
 import checker from "../objects/checker.js";
 
 import { Language } from "../utils/context.js";
-import { Header } from "../components/navbar.js";
+import { Navbar } from "../components/navbar.js";
 import { Loading } from "../components/loading.js";
 import { BackNav } from "../components/backNav.js";
 import { useState, useContext, useEffect } from "react";
@@ -44,7 +44,7 @@ function PracticePage() {
 
     useEffect(() => {
         async function initialize() {
-            if (fetcher.getFromStorage()) {
+            if (fetcher.checkFromStorage()) {
                 await fetcher.clearStorage();
                 await fetcher.fetchQuestions();
             }
@@ -79,7 +79,7 @@ function PracticePage() {
     return (
         <>
             <div className="div-practice">
-                <Header selectedLanguage={language} content={navbarContent} onChange={setLanguage}/>
+                <Navbar selectedLanguage={language} content={navbarContent} onChange={setLanguage}/>
                 <div className="div-content">
                     { isLoading ? <Loading/> : <Query title={query.title} corpus={query.corpus} question={query.question} suggestion={query.suggestion}/> }
                 </div>

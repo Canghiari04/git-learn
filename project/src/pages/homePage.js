@@ -5,7 +5,7 @@ import git from "../img/git.png";
 import { useContext } from "react"; 
 import { Language } from "../utils/context.js";
 import { useNavigate } from "react-router-dom";
-import { Header } from "../components/navbar.js";
+import { Navbar } from "../components/navbar.js";
 import { Footer } from "../components/footer.js";
 import { NavbarStrings, HomeStrings } from "../values/strings.js";
 
@@ -18,7 +18,7 @@ function HomePage() {
   return (
     <>
       <div className="home-div">
-        <Header selectedLanguage={language} content={navbarContent} onChange={setLanguage}/>
+        <Navbar selectedLanguage={language} content={navbarContent} onChange={setLanguage}/>
         <MainContent content={pageContent}/>
         <Footer content={pageContent}/>
       </div>

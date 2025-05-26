@@ -6,21 +6,21 @@ import fetcher from "../objects/fetcher.js";
 import { useContext } from "react"; 
 import { Link } from "react-router-dom";
 import { Language } from "../utils/context.js";
-import { Header } from "../components/navbar.js";
+import { Navbar } from "../components/navbar.js";
 import { NavbarStrings,  LearnStrings } from "../values/strings.js";
 
 function LearnPage() {
     const { language, setLanguage } = useContext(Language);
 
-    if (!fetcher.getFromStorage()) fetcher.fetchQuestions();
-
     var learnContent = LearnStrings[language];
     var navbarContent = NavbarStrings[language];
+
+    if (!fetcher.checkFromStorage()) fetcher.fetchQuestions();
         
     return (
         <>  
             <div className="div-learn">
-                <Header selectedLanguage={language} content={navbarContent} onChange={setLanguage}/>
+                <Navbar selectedLanguage={language} content={navbarContent} onChange={setLanguage}/>
                 <MainContent content={learnContent}/>
             </div>
         </>

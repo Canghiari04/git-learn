@@ -18,7 +18,7 @@ class Fetcher {
         return this.list[index - 1];
     }
 
-    getFromStorage() {
+    checkFromStorage() {
         var _list = JSON.parse(localStorage.getItem("list"));
 
         if (_.isEmpty(_list)) return false;
