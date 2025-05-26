@@ -1,0 +1,89 @@
+.div-container {
+    gap: 2vh;
+    display: flex;
+    max-height: 100%;
+    flex-direction: row;
+}
+
+.div-info {
+    width: 60%;
+    color: white;
+    text-align: left;
+    min-height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.div-info > fieldset {
+    display: flex;
+    padding: 2vh 2.5vh;
+    position: relative;
+    padding-bottom: 5vh;
+    border-radius: 0.5vh;
+    flex-direction: column;
+    border: none !important;
+    background-color: #4a4b50;
+}
+
+.span-info-title {
+    font-size: 13.5pt;
+    font-weight: bold;
+}
+
+.span-info-content {
+    font-size: 11pt;
+    font-weight: 900;
+    line-height: 1.75em;
+}
+
+.div-info > fieldset > button {
+    border: none;
+    right: 1.5vh;
+    bottom: 1.5vh;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    width: fit-content;
+    padding: 0.75vh 1vh;
+    border-radius: 0.5vh;
+    background-color: yellow;
+    transition: color 0.5s ease 0.3s;
+    transition: background-color 0.5s ease 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.div-info > fieldset > button:hover, button:focus {
+    color: white;
+    background-color: darkkhaki;
+    transition-timing-function: 7ms;
+}
+
+.div-submit {
+    width: 40%;
+    display: flex;
+    color: white;
+    text-align: left;
+    padding: 2vh 3vh; 
+    min-height: 100%;
+    position: relative;
+    border-radius: 0.5vh;
+    padding-bottom: 6.5vh;
+    flex-direction: column;
+    background-color: #4a4b50;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.span-submit-title {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.span-submit-subtitle {
+    font-size: 11pt;
+    font-weight: bold;
+    margin-top: 2.5vh;
+}
+
+.span-wrong {
+    display: none;
+}

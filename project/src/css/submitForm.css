@@ -1,0 +1,66 @@
+.field-set-credentials {
+    border: none;
+    display: flex;
+    font-size: 11pt;
+    margin-top: 2vh;
+    border-radius: 0.5vh;
+    flex-direction: column;
+    background-color: #3a3b3d;
+}
+
+.field-set-credentials > legend {
+    font-size: 9pt;
+    border-radius: 0.5vh;
+    padding: 0.5vh 0.5vh;
+    background-color: #3a3b3d;
+}
+
+.field-set-credentials > span {
+    margin-top: 0.75vh;
+    margin-bottom: 0.75vh;
+}
+
+.field-set-credentials > input {
+    color: white;
+    padding: 0.5vh;
+    font-size: 11pt;
+    border-radius: 0.25vh;
+    margin-bottom: 0.75vh;
+    border: none !important;
+    background-color: #3a3b3d;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.field-set-credentials > input:focus {
+    outline: 2px solid yellow;
+    background-color: #4a4b50;
+}
+
+.span-wrong {
+    color: red;
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+.div-submit > form > button {
+    border: none;
+    right: 1.5vh;
+    bottom: 1.5vh;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    width: fit-content;
+    padding: 0.75vh 1vh;
+    border-radius: 0.5vh;
+    background-color: yellow;
+    transition: color 0.5s ease 0.3s;
+    transition: background-color 0.5s ease 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.div-submit > form > button:hover, button:focus {
+    color: white;
+    background-color: darkkhaki;
+    transition-timing-function: 7ms;
+}

@@ -1,0 +1,10 @@
+.div-profile {
+    min-height: 100vh;
+    padding: 0vh 45vh;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-align: center;
+    align-items: center;
+    background-color: #282c34;    
+}
