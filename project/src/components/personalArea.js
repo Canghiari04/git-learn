@@ -22,7 +22,7 @@ export function PersonalArea({ setLogged }) {
                 <div className="div-second-column">{component}</div>
             </div>
         </>
-    )
+    );
 }
 
 function List({ setLogged, setComponent }) {
