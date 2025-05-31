@@ -1,0 +1,258 @@
+.div-parent {
+    gap: 1vh;
+    width: 100%;
+    display: flex;
+    margin-top: 10vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.div-first-column {
+    width: 25%;
+}
+
+.div-first-column > fieldset {
+    height: auto;
+    display: flex;
+    color: white;
+    text-align: left;
+    position: relative;
+    padding-bottom: 5vh;
+    border-radius: 0.5vh;
+    flex-direction: column;
+    border: none !important;
+    background-color: #4a4b50;
+    padding: 2vh 2.5vh 0vh 2.5vh;
+}
+
+.div-first-column > fieldset > span {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.div-first-column > fieldset > ul, li {
+    padding: 0;
+    margin: 1vh 0vh;
+    font-size: 11pt;
+    list-style-type: none !important;
+}
+
+li {
+    padding: 0.25vh 1vh;
+    border-radius: 0.5vh;
+    border: 2px solid #4a4b50;
+    transition: border-color 0.5s ease 0.2s;
+}
+
+li:hover {
+    cursor: pointer;
+    border-color: yellow;
+}
+
+.li-selected {
+    color: black;
+    font-weight: bold;
+    background-color: yellow;
+}
+
+.li-danger-zone-selected {
+    color: black;
+    font-weight: bold;
+    background-color: red;
+}
+
+.li-danger-zone:hover, .li-danger-zone-selected:hover {
+    cursor: pointer;
+    border-color: red;
+}
+
+.div-second-column {
+    width: 75%;
+    overflow-y: auto;
+}
+
+.div-badge {
+    display: flex;
+    color: white;
+    text-align: left;
+    padding: 2vh 3.5vh;
+    border-radius: 0.5vh;
+    flex-direction: column;
+    background-color: #3a3b3d;
+}
+
+.span-title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+
+.div-badge > fieldset {
+    display: flex;
+    padding: 2vh 1.5vh;
+    margin: 2vh 0vh 1vh;
+    border-radius: 0.5vh;
+    flex-direction: column;
+    border: 2px solid #4a4b50;
+    transition: border 0.5s ease 0.3s;
+}
+
+.div-badge > fieldset:hover {
+    border-color: yellow;
+}
+
+.div-badge > fieldset > div {
+    display: grid;
+    margin: 1vh 0vh;
+    align-items: center;
+    grid-template-columns: 30% 70%;
+}
+
+.div-badge > fieldset > div > label {
+    font-size: 11pt;
+}
+
+.div-badge > fieldset > div > input {
+    outline: none;
+    color: white;
+    font-size: 11pt;
+    padding: 0.75vh 1vh;
+    border-radius: 0.25vh;
+    border: none ! important;
+    background-color: #4a4b50;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.div-badge > fieldset > div > input:focus {
+    outline: 2px solid yellow;
+}
+
+.div-badge > fieldset > .div-button {
+    gap: 2vh;
+    width: 100%;
+    display: flex;
+    margin: 2vh 0vh 0vh;
+    justify-content: flex-start;
+}
+
+button {
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    width: fit-content;
+    border-radius: 0.5vh;
+    padding: 0.75vh 1.5vh;
+    background-color: yellow;
+    transition-timing-function: 7ms;
+    transition: color 0.5s ease 0.3s;
+    transition: background-color 0.5s ease 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+}   
+
+.button-cancel {
+    color: white;
+    padding: 0.95vh 1.5vh;
+    background-color: black;
+}
+
+.button-cancel:hover, .button-cancel:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.button-save:hover, .button-save:focus {
+    color: white;
+    background-color: darkkhaki;
+}
+
+.button-cancel-disabled {
+    opacity: 0.5;
+    color: white;
+    cursor: not-allowed;
+    padding: 0.95vh 1.5vh;
+    background-color: black;
+}
+
+.button-save-disabled {
+    opacity: 0.5;
+    color: black;
+    cursor: not-allowed;
+    padding: 0.75vh 1.5vh;
+    background-color: rgba(255, 255, 0, 0.445);
+}
+
+.div-statistics {
+    display: flex;
+    color: white;
+    text-align: left;
+    padding: 2vh 3.5vh;
+    border-radius: 0.5vh;
+    flex-direction: column;
+    background-color: #3a3b3d; 
+}
+
+.div-danger-zone {
+    display: flex;
+    color: white;
+    text-align: left;
+    padding: 2vh 3.5vh;
+    border-radius: 0.5vh;
+    flex-direction: column;
+    background-color: #3a3b3d;
+}
+
+.div-danger-zone > div {
+    gap: 2vh;
+    display: flex;
+    align-items: center;
+}
+
+.div-danger-zone > div > span:first-of-type {
+    padding: 0.5vh 0.75vh;
+    border-radius: 0.25vh;
+    background-color: red;
+}
+
+.div-danger-zone > div > span > img {
+    width: 2.25vh;
+    filter: brightness(1000%) saturate(0%);
+}
+
+.span-warning {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.div-danger-zone > fieldset {
+    display: flex;
+    padding: 2vh 1.5vh;
+    margin: 2vh 0vh 1vh;
+    border-radius: 0.5vh;
+    flex-direction: column;
+    border: 2px solid #4a4b50;
+    transition: border-color 0.5s ease 0.2s;
+}
+
+.div-danger-zone > fieldset:hover {
+    border-color:red;
+}
+
+.div-danger-zone > fieldset > span:first-of-type {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+
+.div-danger-zone > fieldset > span:nth-last-child(2) {
+    font-size: 11pt;
+    margin-bottom: 2vh;
+    font-weight: lighter;
+}
+
+.button-delete {
+    color: white;
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+.button-delete:hover, .button-delete:focus {
+    background-color: red;
+}

@@ -6,7 +6,13 @@ const client = supabaseFactory.getInstance();
 
 class Logger {
     getData() {
-        return [localStorage.getItem("name"), localStorage.getItem("lastname"), localStorage.getItem("mail"), localStorage.getItem("password")];
+        return {
+            "id": localStorage.getItem("id"),
+            "name": localStorage.getItem("name"),
+            "lastname": localStorage.getItem("lastname"),
+            "mail": localStorage.getItem("mail"),
+            "password": localStorage.getItem("password")
+        }
     }
 
     checkFromStorage() {
@@ -36,9 +42,11 @@ class Logger {
             const _name =  name[0].toUpperCase() + name.slice(1, name.length).toLowerCase();
             const _lastname = lastname[0].toUpperCase() + lastname.slice(1, lastname.length).toLowerCase();
             
-            await client.from("users").insert({name: _name, lastname: _lastname, mail: mail, password: password}).throwOnError();
+            const {data} = await client.from("users").insert({ name: _name, lastname: _lastname, mail: mail, password: password }).select().throwOnError();
 
-            this.saveInStorage(name, lastname, mail, password);
+            data.map((item) => {
+                this.saveInStorage(item.id, item.name, item.lastname, mail, password);
+            });        
 
             return true;
         } catch(error) {
@@ -52,7 +60,7 @@ class Logger {
             const { data } = await client.from("users").select().eq("mail", mail).eq("password", password).throwOnError();
     
             data.map((item) => {
-               this.saveInStorage(item.name, item.lastname, mail, password);
+               this.saveInStorage(item.id, item.name, item.lastname, mail, password);
             });        
     
             return true;
@@ -62,11 +70,32 @@ class Logger {
         }
     }
 
-    saveInStorage(name, lastname, mail, password) {
-        localStorage.setItem("mail", mail);
+    saveInStorage(id, name, lastname, mail, password) {
+        localStorage.setItem("id", id);
         localStorage.setItem("name", name);
         localStorage.setItem("lastname", lastname);
+        localStorage.setItem("mail", mail);
         localStorage.setItem("password", password);
+    }
+
+    async update() {
+        const data = this.getData();
+
+        try {
+            await client.from("users").update({ name: data.name, lastname: data.lastname, mail: data.mail, password: data.password }).eq("id", data.id).throwOnError();
+        } catch (error) {
+            console.log(error.details);
+        }
+    }
+
+    async delete() {
+        const data = this.getData();
+
+        try {
+            await client.from("users").delete().eq("id", data.id).throwOnError();
+        } catch (error) {
+            console.log(error.details);
+        }
     }
 }
 

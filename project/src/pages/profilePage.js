@@ -5,7 +5,7 @@ import logger from "../objects/logger";
 import { Language } from "../utils/context";
 import { Login } from "../components/login";
 import { useContext, useState } from "react";
-import { Signin } from "../components/signIn";
+import { Signin } from "../components/signin";
 import { Navbar } from "../components/navbar";
 import { NavbarStrings } from "../values/strings";
 import { PersonalArea } from "../components/personalArea";
