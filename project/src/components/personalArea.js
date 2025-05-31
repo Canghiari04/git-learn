@@ -172,9 +172,9 @@ function DangerZone({ setLogged }) {
                     <span className="span-warning">Zona pericolosa</span>
                 </div>
                 <fieldset>
-                    <span>Log out</span>
-                    <span></span>
-                    <button className="button-delete" onClick={logOut}>Log out</button>
+                    <span>Disconnessione dall'account</span>
+                    <span>Disconnetendoti dal tuo account non perderai alcun dato associato, tutte le tue informazioni e i tuoi progressi sono automaticamente salvati.</span>
+                    <button className="button-delete" onClick={logOut}>Esci</button>
                 </fieldset>
                 <fieldset>
                     <span>Eliminazione dell'account</span>
